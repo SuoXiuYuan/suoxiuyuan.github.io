@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="对于任意数制R 的数n，都可以表达为$$n&#x3D;\sum_{i&#x3D;0}^{k} a_{i} R^{i}&#x3D;a_{0} R^{0}+a_{1} R^{1}+a_{2} R^{2}+\ldots+a_{k} R^{k}$$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进制">
+<meta property="og:url" content="http://example.com/2023/07/30/%E8%BF%9B%E5%88%B6/index.html">
+<meta property="og:site_name" content="SuoXiuYuan&#39;s Blog">
+<meta property="og:description" content="对于任意数制R 的数n，都可以表达为$$n&#x3D;\sum_{i&#x3D;0}^{k} a_{i} R^{i}&#x3D;a_{0} R^{0}+a_{1} R^{1}+a_{2} R^{2}+\ldots+a_{k} R^{k}$$">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-30T14:07:59.000Z">
+<meta property="article:modified_time" content="2023-07-30T15:56:42.959Z">
+<meta property="article:author" content="SuoXiuYuan">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/07/30/%E8%BF%9B%E5%88%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>进制 | SuoXiuYuan's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+
+
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">SuoXiuYuan's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">轻舟已过万重山</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/30/%E8%BF%9B%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SuoXiuYuan">
+      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SuoXiuYuan's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          进制
+        </h1>
+
+        <div class="post-meta">
+
+
+
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-30 22:07:59 / 修改时间：23:56:42" itemprop="dateCreated datePublished" datetime="2023-07-30T22:07:59+08:00">2023-07-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">竞赛算法和数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E8%AE%BA/%E8%BF%9B%E5%88%B6/" itemprop="url" rel="index"><span itemprop="name">进制</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>601</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>对于任意数制R 的数n，都可以表达为<br>$$<br>n&#x3D;\sum_{i&#x3D;0}^{k} a_{i} R^{i}&#x3D;a_{0} R^{0}+a_{1} R^{1}+a_{2} R^{2}+\ldots+a_{k} R^{k}<br>$$</p>
+<span id="more"></span>
+
+<h2 id="一、十进制转R进制"><a href="#一、十进制转R进制" class="headerlink" title="一、十进制转R进制"></a>一、十进制转R进制</h2><p>方法：十进制数除R RR取余，余数倒着写<br>例：<br>66(D)→1000 010(B)计算过程：</p>
+<p>①66&#x2F;2&#x3D;33，余数为0<br>②33&#x2F;2&#x3D;16，余数为1<br>③16&#x2F;2&#x3D;8，余数为0<br>④8&#x2F;2&#x3D;4，余数为0<br>⑤4&#x2F;2&#x3D;2，余数为0<br>⑥2&#x2F;2&#x3D;1，余数为0<br>⑦1&#x2F;2&#x3D;0，余数为1</p>
+<p>66(D)→42(H)计算过程：<br>①66&#x2F;16&#x3D;4，余数为2<br>②4&#x2F;16&#x3D;0，余数为4</p>
+<h2 id="二、十六进制转二进制"><a href="#二、十六进制转二进制" class="headerlink" title="二、十六进制转二进制"></a>二、十六进制转二进制</h2><p>方法：十六进制每一位写成四位的二进制数<br>例：42(H)→0100 0010(B)</p>
+<h2 id="三、八进制转二进制"><a href="#三、八进制转二进制" class="headerlink" title="三、八进制转二进制"></a>三、八进制转二进制</h2><p>方法：八进制每一位写成三位的二进制数<br>例：456(O)→100 101 110(B)</p>
+<h2 id="四、二进制转十进制"><a href="#四、二进制转十进制" class="headerlink" title="四、二进制转十进制"></a>四、二进制转十进制</h2><p>方法：二进制每一位加权求和<br>例：100 0010(B)→66(D)<br>计算过程：<br>$$<br>1 \times 2^{6}+0 \times 2^{5}+0 \times 2^{4}+0 \times 2^{3}+0 \times 2^{2}+1 \times 2^{1}+0 \times 2^{0}&#x3D;66<br>$$</p>
+<h2 id="五、Java自带的进制处理"><a href="#五、Java自带的进制处理" class="headerlink" title="五、Java自带的进制处理"></a>五、Java自带的进制处理</h2><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span><span class="keyword">to</span><span class="constructor">String(255, 16)</span>;<span class="comment">//10进制数转0~35进制，结果为字符串</span></span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;s=&quot;</span>+s);</span><br><span class="line"></span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span><span class="keyword">to</span><span class="constructor">String(666, 36)</span>);<span class="comment">//666(D)转换为36进制</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> a = <span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span>parse<span class="constructor">Int(<span class="params">s</span>, 16)</span>;<span class="comment">//把字符串当做多少进制，结果转换为10进制</span></span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;a=&quot;</span>+a);</span><br><span class="line"></span><br><span class="line">BigInteger m = <span class="keyword">new</span> <span class="constructor">BigInteger(<span class="params">s</span>,16)</span>;<span class="comment">//把16进制的字符串封装为大数对象</span></span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;big integer m=&quot;</span>+m);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="六、相关例题"><a href="#六、相关例题" class="headerlink" title="六、相关例题"></a>六、相关例题</h2><hr>
+<h3 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h3><h4 id="题目介绍："><a href="#题目介绍：" class="headerlink" title="题目介绍："></a>题目介绍：</h4><p>​      小赵对进制特别感兴趣，不必研究2进制, 3进制, 4进制, 5进制… ，突然有一次，他发现了一个特殊的数2992，这个数，它的十进制数表示，其四位数字之和为2+9+9+2&#x3D;22，它的十六进制数BB0，其四位数字之和也为22，同时它的十二进制数表示1894，其四位数字之和也为22，啊哈，真是巧啊。之后他就去翻书，发现这种数叫sky数。但是要判断这样的数还是有点麻烦啊，那么现在请你帮忙来判断任何一个十进制的四位数，是不是Sky数吧。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入:"></a>输入:</h3><p>输入含有些小10000000 整数，如果为0，则输入结束。输出若为Sky数，则输出“#n is a Sky Number.”，否则输出“#n is not a Sky Number.”每个结果占一行。注意：#n表示所读入的n值。</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2992</span></span><br><span class="line"><span class="number">1234</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">1 </span>is a Sky Number.</span><br><span class="line"><span class="symbol">2992 </span>is a Sky Number.</span><br><span class="line"><span class="symbol">1234 </span>is <span class="keyword">not</span> a Sky Number.</span><br><span class="line"><span class="symbol">0 </span>is a Sky Number.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="程序代码"><a href="#程序代码" class="headerlink" title="程序代码"></a>程序代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">		<span class="keyword">while</span> (sc.hasNext()) &#123;</span><br><span class="line">			<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">			<span class="keyword">if</span> (getNum(n, <span class="number">10</span>) == getNum(n, <span class="number">16</span>) &amp;&amp; getNum(n, <span class="number">10</span>) == getNum(n, <span class="number">12</span>)) &#123;</span><br><span class="line"></span><br><span class="line">				System.out.println(n + <span class="string">&quot; is a Sky Number.&quot;</span>);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println(n + <span class="string">&quot; is not a Sky Number.&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getNum</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> R)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			sum += n % R;</span><br><span class="line">			n /= R;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> sum;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h3><h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><p>求出一个集合中的所有子集</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>一个元素的所有子集个数之和为2的n次方，可以用二进制的角度来分析</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">例如 &#123;1，2,3,4&#125;</span><br><span class="line">   <span class="number"> 0 </span>0<span class="number"> 0 </span>1   表示只打印第一个</span><br><span class="line">   <span class="number"> 0 </span>0<span class="number"> 1 </span>0    表示只打印第二个</span><br><span class="line">    </span><br><span class="line">    1表示打印，2表示不打印   转化为类似于01背包的问题</span><br><span class="line">   </span><br><span class="line">    不妨让0~15的二进制数来表示所有集合的结果</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="程序代码-1"><a href="#程序代码-1" class="headerlink" title="程序代码"></a>程序代码</h4><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">char</span>[] a = &#123; <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span> &#125;;</span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; Math.pow(<span class="number">2</span>, a.length); i++) &#123;</span><br><span class="line">			System.out.<span class="keyword">print</span>(<span class="string">&quot;&#123;&quot;</span>);</span><br><span class="line">			<span class="built_in">int</span> n = i;<span class="comment">// i表示第几种结果</span></span><br><span class="line">			<span class="built_in">int</span> <span class="keyword">index</span> = <span class="number">0</span>;<span class="comment">//// 当前是第几次去除以2(二进制数位指针左移一位)</span></span><br><span class="line">			<span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line"><span class="comment">//				n%2的结果看的是二进制最左边那个数，例如0001 中的1</span></span><br><span class="line">				<span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line"><span class="comment">//					如果本位数显示是1则打印</span></span><br><span class="line">					<span class="keyword">if</span> (n &gt; <span class="number">2</span>) &#123;</span><br><span class="line">						System.out.<span class="keyword">print</span>(a[<span class="keyword">index</span>] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">					&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">						System.out.<span class="keyword">print</span>(a[<span class="keyword">index</span>]);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"><span class="comment">//              指向二进制指针左移的次数，也是数组的指针或者索引（向右边移动）</span></span><br><span class="line">				<span class="keyword">index</span>++;</span><br><span class="line">				n /= <span class="number">2</span>;</span><br><span class="line"><span class="comment">//				把最后一位剔除掉，相当于 0 0 0 1变成了 0 0 0 </span></span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(<span class="string">&quot;&#125;&quot;</span>);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/07/30/%E8%BF%9B%E5%88%B6%E6%A8%A1%E6%8B%9F%E5%92%8C%E6%95%B0%E4%BD%8D%E6%8B%86%E5%88%86-%E8%AE%A1%E7%AE%97%E8%BF%9B%E4%BD%8D/" rel="prev" title="进制模拟和数位拆分(计算进位)">
+      <i class="fa fa-chevron-left"></i> 进制模拟和数位拆分(计算进位)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/07/31/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="next" title="位运算">
+      位运算 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%ACR%E8%BF%9B%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">一、十进制转R进制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">二、十六进制转二进制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%85%AB%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">三、八进制转二进制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">四、二进制转十进制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81Java%E8%87%AA%E5%B8%A6%E7%9A%84%E8%BF%9B%E5%88%B6%E5%A4%84%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">五、Java自带的进制处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E7%9B%B8%E5%85%B3%E4%BE%8B%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">六、相关例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80"><span class="nav-number">6.1.</span> <span class="nav-text">题目一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="nav-number">6.1.1.</span> <span class="nav-text">题目介绍：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">6.2.</span> <span class="nav-text">输入:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="nav-number">6.2.1.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="nav-number">6.2.2.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81"><span class="nav-number">6.2.3.</span> <span class="nav-text">程序代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C"><span class="nav-number">6.3.</span> <span class="nav-text">题目二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">6.3.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">6.3.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81-1"><span class="nav-number">6.3.3.</span> <span class="nav-text">程序代码</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SuoXiuYuan"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SuoXiuYuan</p>
+  <div class="site-description" itemprop="description">路漫漫其修远兮，吾将上下而求索</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SuoXiuYuan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">2k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+<script type="text/javascript"
+color="0,0,0" opacity='0.7' zIndex="-2" count="500" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+</body>
+</html>
