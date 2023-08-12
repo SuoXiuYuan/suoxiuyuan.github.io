@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo在git下的快捷指令以及md文件编写</title>
+    <url>/2023/07/30/hexo%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="快捷指令"><a href="#快捷指令" class="headerlink" title="快捷指令"></a>快捷指令</h1><hr>
+<h2 id="生成文章的编辑工具"><a href="#生成文章的编辑工具" class="headerlink" title="生成文章的编辑工具"></a>生成文章的编辑工具</h2><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;文章链接&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo s</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<span id="more"></span>
+
+<h2 id="更新博客"><a href="#更新博客" class="headerlink" title="更新博客"></a>更新博客</h2><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo g -d</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="markdown文件编译"><a href="#markdown文件编译" class="headerlink" title="markdown文件编译"></a>markdown文件编译</h1><hr>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--more--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="显示全文"><a href="#显示全文" class="headerlink" title="显示全文"></a>显示全文</h2><hr>
+<h2 id="标准开头"><a href="#标准开头" class="headerlink" title="标准开头"></a>标准开头</h2><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">title: 标题</span><br><span class="line">date: 时间</span><br><span class="line"><span class="keyword">tags:</span> 标签</span><br><span class="line">categories: 分类</span><br><span class="line"></span><br><span class="line">记得冒号后加空格！！</span><br><span class="line"></span><br><span class="line">分类的例子：</span><br><span class="line">categories:</span><br><span class="line">- [学习,html]</span><br><span class="line">- [学习,http]</span><br><span class="line">效果如本博客所示</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>英文的&gt;是文章摘要，一个回车继续写，2个回车退出该次编辑</p>
+<figure class="highlight node-repl"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span> <span class="language-javascript">+文章概要</span></span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<blockquote>
+<p>文章摘要</p>
+</blockquote>
+<hr>
+<h2 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h2><p>-[]内容，在横岗后面加空格，在中括号中加空格。</p>
+<p>例如</p>
+<ul>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<hr>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line">方法一：~~内容~~</span><br><span class="line"> </span><br><span class="line">方法二：~~内容~   </span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<p><del>内容</del></p>
+<hr>
+<h2 id="划横线和代码块"><a href="#划横线和代码块" class="headerlink" title="划横线和代码块"></a>划横线和代码块</h2><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">划横线：<span class="comment">---</span></span><br><span class="line">代码块：~~~</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="latex数学公式编辑器"><a href="#latex数学公式编辑器" class="headerlink" title="latex数学公式编辑器"></a>latex数学公式编辑器</h2><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line">里面插入latex代码</span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line">[在线latex工具](https:<span class="comment">//www.texpage.com/)</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>hexo快捷指令</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java后端学习路线</title>
     <url>/2023/07/28/title/</url>
     <content><![CDATA[<h1 id="首先这是Java后端的学习路线（未更新完）后续会补充完整，随缘更新Java面试题以及竞赛算法的Java模板和对应知识点的的系统讲解（csdn，github或者b站上面的详细图解和讲解，老夫有心无力，讲解和画图的时间成本太大了）"><a href="#首先这是Java后端的学习路线（未更新完）后续会补充完整，随缘更新Java面试题以及竞赛算法的Java模板和对应知识点的的系统讲解（csdn，github或者b站上面的详细图解和讲解，老夫有心无力，讲解和画图的时间成本太大了）" class="headerlink" title="首先这是Java后端的学习路线（未更新完）后续会补充完整，随缘更新Java面试题以及竞赛算法的Java模板和对应知识点的的系统讲解（csdn，github或者b站上面的详细图解和讲解，老夫有心无力，讲解和画图的时间成本太大了）"></a><strong>首先这是Java后端的学习路线（未更新完）后续会补充完整，随缘更新Java面试题以及竞赛算法的Java模板和对应知识点的的系统讲解（csdn，github或者b站上面的详细图解和讲解，老夫有心无力，讲解和画图的时间成本太大了）</strong></h1><h2 id="JavaSE-Java零基础教程视频（适合Java-0基础，Java初学入门）-哔哩哔哩-bilibili"><a href="#JavaSE-Java零基础教程视频（适合Java-0基础，Java初学入门）-哔哩哔哩-bilibili" class="headerlink" title="[JavaSE](Java零基础教程视频（适合Java 0基础，Java初学入门）_哔哩哔哩_bilibili)"></a>[JavaSE](<a href="https://www.bilibili.com/video/BV1Rx411876f/?vd_source=205b9aa791a13bdcc9e04b9d7d1e0544">Java零基础教程视频（适合Java 0基础，Java初学入门）_哔哩哔哩_bilibili</a>)</h2><hr>
@@ -21,6 +75,109 @@
 <h1 id="To-be-continue"><a href="#To-be-continue" class="headerlink" title="To be continue    ~~~~~~~~~"></a>To be continue    ~~~~~~~~~</h1>]]></content>
       <categories>
         <category>JAVA 后端学习路线</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>biginteger和bigdecimal的运用(相关题目：棋盘放麦子等)</title>
+    <url>/2023/08/13/biginteger%E5%92%8Cbigdecimal%E7%9A%84%E8%BF%90%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="一，biginteger"><a href="#一，biginteger" class="headerlink" title="一，biginteger"></a>一，biginteger</h2><p><strong>①</strong>value.Of(参数); 这个函数的作用是将括号内的参数转换成指定的数据类型</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">•                       <span class="built_in">int</span> A=<span class="number">42</span>;</span><br><span class="line">•                       BigInteger f=<span class="module-access"><span class="module"><span class="identifier">BigInteger</span>.</span></span>value<span class="constructor">Of(A)</span>;</span><br><span class="line">•                       <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;f=&quot;</span>+f); <span class="comment">//输出的f将会等于BigInteger型的42</span></span><br><span class="line">•                        <span class="comment">// 答案： f=42</span></span><br><span class="line"></span><br><span class="line">•                        String s=<span class="string">&quot;12345&quot;</span>;</span><br><span class="line">•                       BigInteger c=<span class="module-access"><span class="module"><span class="identifier">BigInteger</span>.</span></span>value<span class="constructor">Of(<span class="params">s</span>)</span>;</span><br><span class="line">•           <span class="comment">//  则c=12345;※※※需要注意的是不重写的话，jdk1.8 版本是无法支持这种转换的</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p><strong>②</strong>add()方法； 这个函数的作用是将<a href="https://so.csdn.net/so/search?q=%E5%A4%A7%E6%95%B4%E6%95%B0&spm=1001.2101.3001.7020">大整数</a>加起来</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">•                       BigInteger c=<span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;6&quot;</span>)</span>;</span><br><span class="line">•                       BigInteger d=<span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;3&quot;</span>)</span>;</span><br><span class="line">•                       <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;c+d=&quot;</span>+c.add(d));</span><br><span class="line">                        <span class="comment">//答案输出： c+d=9</span></span><br></pre></td></tr></table></figure>
+
+<p>③subtract()方法，这个函数的作用是将大整数相减，例如以下例子,运用时前者减后者</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">•                       BigInteger c=<span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;5&quot;</span>)</span>;</span><br><span class="line">•                       BigInteger d=<span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;3&quot;</span>)</span>;</span><br><span class="line">•                       <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;d-c=&quot;</span>+d.subtract(c));</span><br><span class="line">                        <span class="comment">//答案输出： d-c=-2</span></span><br></pre></td></tr></table></figure>
+
+<p>④multiply()方法，这个函数的作用是将大整数相乘</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">•                       BigInteger c=<span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;6&quot;</span>)</span>;</span><br><span class="line">•                       BigInteger d=<span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;3&quot;</span>)</span>;</span><br><span class="line">•                       <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;c*d=&quot;</span>+c.multiply(d));</span><br><span class="line">                        <span class="comment">//答案输出： c*d=18</span></span><br></pre></td></tr></table></figure>
+
+<p>⑤divide()方法，这个函数的作用是将大整数做除法</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">•                       BigInteger c=<span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;6&quot;</span>)</span>;</span><br><span class="line">•                       BigInteger d=<span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;4&quot;</span>)</span>;</span><br><span class="line">•                       <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;c/d=&quot;</span>+c.divide(d));</span><br><span class="line">                        <span class="comment">// 答案输出；c/d=1</span></span><br></pre></td></tr></table></figure>
+
+<p>⑥remainder()方法，这个函数的作用是将大整数取余</p>
+<p>⑦pow(exponent)方法，这个函数的作用是将大整数取exponent的指数，例如a.pow(b)&#x3D;&#x3D;a^b;</p>
+<p>⑧gcd()方法，这个函数的作用是将两个大整数取最大公约数，例如a.gcd(b)；</p>
+<p>⑨abs()方法，这个函数的作用是取绝对值，例如</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">•                       BigInteger c=<span class="keyword">new</span> BigInteger(<span class="string">&quot;-9&quot;</span>);</span><br><span class="line">•                       System.out.<span class="keyword">println</span>(c.<span class="keyword">abs</span>());</span><br><span class="line">                        <span class="comment">//答案输出: 9</span></span><br></pre></td></tr></table></figure>
+
+<p>⑩negate()方法，这个函数的作用是取数的相反数，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">•                       BigInteger c=new BigInteger(&quot;9&quot;);</span><br><span class="line">•                       System.out.println(c.negate());</span><br><span class="line">                        // 答案输出: -9</span><br></pre></td></tr></table></figure>
+
+<p>⑪mod()方法; 这个函数的作用是对数进行取余 a.mod(b)&#x3D;a%b&#x3D;a.remainder(b);</p>
+<p>⑫max()方法，min()方法，分别是比较两个数的大小，例如a.max(b); 取a,b中的最大值</p>
+<p>⑬compareTo()方法这个方法是用来比较两个大整数大小的</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">• <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testCompare</span><span class="params">()</span> &#123;</span><br><span class="line">•   <span class="type">BigInteger</span> <span class="variable">bigNum1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigInteger</span>(<span class="string">&quot;52&quot;</span>);</span><br><span class="line">•   <span class="type">BigInteger</span> <span class="variable">bigNum2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigInteger</span>(<span class="string">&quot;27&quot;</span>);</span><br><span class="line">​</span><br><span class="line">•   <span class="comment">//1.compareTo()：返回一个int型数据（1 大于； 0 等于； -1 小于）</span></span><br><span class="line">•   <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> bigNum1.compareTo(bigNum2);           <span class="comment">//1</span></span><br><span class="line">​</span><br><span class="line">•   <span class="comment">//2.max()：直接返回大的那个数，类型为BigInteger</span></span><br><span class="line">•   <span class="comment">//  原理：return (compareTo(val) &gt; 0 ? this : val);</span></span><br><span class="line">•   <span class="type">BigInteger</span> <span class="variable">compareMax</span> <span class="operator">=</span> bigNum1.max(bigNum2);   <span class="comment">//52</span></span><br><span class="line">​</span><br><span class="line">•   <span class="comment">//3.min()：直接返回小的那个数，类型为BigInteger</span></span><br><span class="line">•   <span class="comment">//  原理：return (compareTo(val) &lt; 0 ? this : val);</span></span><br><span class="line">•   <span class="type">BigInteger</span> <span class="variable">compareMin</span> <span class="operator">=</span> bigNum1.min(bigNum2);   <span class="comment">//27</span></span><br><span class="line">•&#125;</span><br></pre></td></tr></table></figure>
+
+<p>⑭equals()方法，判断两个大整数是否相等，例如c.equals(d) 相等就返回 true;</p>
+<h3 id="BigInteger一些基本类型的转换"><a href="#BigInteger一些基本类型的转换" class="headerlink" title="BigInteger一些基本类型的转换:"></a>BigInteger一些基本类型的转换:</h3><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">public void test<span class="constructor">ToAnother()</span> &#123;</span><br><span class="line">    BigInteger bigNum = <span class="keyword">new</span> <span class="constructor">BigInteger(<span class="string">&quot;38&quot;</span>)</span>;</span><br><span class="line">    <span class="built_in">int</span> radix = <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//1.转换为bigNum的二进制补码形式</span></span><br><span class="line">    byte<span class="literal">[]</span> num1 = bigNum.<span class="keyword">to</span><span class="constructor">ByteArray()</span>;</span><br><span class="line">    <span class="comment">//2.转换为bigNum的十进制字符串形式</span></span><br><span class="line">    String num2 = bigNum.<span class="keyword">to</span><span class="constructor">String()</span>;        <span class="comment">//38</span></span><br><span class="line">    <span class="comment">//3.转换为bigNum的radix进制字符串形式</span></span><br><span class="line">    String num3 = bigNum.<span class="keyword">to</span><span class="constructor">String(<span class="params">radix</span>)</span>;   <span class="comment">//100110</span></span><br><span class="line">    <span class="comment">//4.将bigNum转换为int</span></span><br><span class="line">    <span class="built_in">int</span> num4 = bigNum.<span class="built_in">int</span><span class="constructor">Value()</span>;</span><br><span class="line">    <span class="comment">//5.将bigNum转换为long</span></span><br><span class="line">    long num5 = bigNum.long<span class="constructor">Value()</span>;</span><br><span class="line">    <span class="comment">//6.将bigNum转换为float</span></span><br><span class="line">    <span class="built_in">float</span> num6 = bigNum.<span class="built_in">float</span><span class="constructor">Value()</span>;</span><br><span class="line">    <span class="comment">//7.将bigNum转换为double</span></span><br><span class="line">    double num7 = bigNum.double<span class="constructor">Value()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="二，BigDecimal"><a href="#二，BigDecimal" class="headerlink" title="二，BigDecimal"></a>二，BigDecimal</h2><p>用来对超过16位有效位的数进行精确的运算。</p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">//int,string转BigDecimal</span></span><br><span class="line">BigDecimal a = <span class="keyword">new</span> <span class="constructor">BigDecimal(10)</span>;</span><br><span class="line"><span class="comment">//long,float,double转BigDecimal</span></span><br><span class="line">BigDecimal b = <span class="module-access"><span class="module"><span class="identifier">BigDecimal</span>.</span></span>value<span class="constructor">Of(5.55)</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">//加法</span></span><br><span class="line">BigDecimal c = a.add(b);</span><br><span class="line"><span class="comment">//减法</span></span><br><span class="line">c = a.subtract(b);</span><br><span class="line"><span class="comment">//乘法</span></span><br><span class="line">c = a.multiply(b);</span><br><span class="line">c = a.multiply(b).set<span class="constructor">Scale(4,BigDecimal.ROUND_HALF_UP)</span>;</span><br><span class="line"><span class="comment">//除法</span></span><br><span class="line">c = a.divide(b, <span class="number">2</span>, RoundingMode.HALF_UP);</span><br><span class="line"><span class="comment">//求余数</span></span><br><span class="line">c = a.remainder(b);</span><br><span class="line"><span class="comment">//最小值</span></span><br><span class="line">c = a.min(b);</span><br><span class="line"><span class="comment">//最大值</span></span><br><span class="line">c = a.max(b);</span><br><span class="line"><span class="comment">//绝对值</span></span><br><span class="line">c = a.abs<span class="literal">()</span>;</span><br><span class="line"><span class="comment">//相反数</span></span><br><span class="line">c = a.negate<span class="literal">()</span>;</span><br><span class="line"><span class="comment">//去除多余的0</span></span><br><span class="line">a.strip<span class="constructor">TrailingZeros()</span>;</span><br><span class="line"><span class="comment">//去除多余的0, 并转为字符串</span></span><br><span class="line"><span class="comment">//不能使用toString(), 会返回科学计数法</span></span><br><span class="line">String a_string = a.strip<span class="constructor">TrailingZeros()</span>.<span class="keyword">to</span><span class="constructor">PlainString()</span>;</span><br><span class="line"><span class="comment">//返回此BigDecimal的正负, -1为负, 0为0 , 1为正</span></span><br><span class="line"><span class="built_in">int</span> a_int = a.signum<span class="literal">()</span>;</span><br><span class="line"><span class="comment">//比较大小, -1为a&lt;b, 0为a=b , 1为a&gt;b</span></span><br><span class="line">a_int = a.compare<span class="constructor">To(<span class="params">b</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//BigDecimal转其他类型</span></span><br><span class="line">String b_string = b.<span class="keyword">to</span><span class="constructor">String()</span>;</span><br><span class="line"><span class="built_in">int</span> b_int = b.<span class="built_in">int</span><span class="constructor">Value()</span>;</span><br><span class="line">long b_long = b.long<span class="constructor">Value()</span>;</span><br><span class="line"><span class="built_in">float</span> b_float = b.<span class="built_in">float</span><span class="constructor">Value()</span>;</span><br><span class="line">double b_double = b.double<span class="constructor">Value()</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="精度设置"><a href="#精度设置" class="headerlink" title="精度设置"></a>精度设置</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">a</span>.setScale(<span class="number">4</span>,BigDecimal.ROUND_HALF_UP);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>BigDecimal.ROUND_UP<br>远离零的舍入模式</p>
+</li>
+<li><p>BigDecimal.ROUND_DOWN<br>接近零的舍入模式</p>
+</li>
+<li><p>BigDecimal.ROUND_CEILING<br>接近正无穷大的舍入模式</p>
+</li>
+<li><p>BigDecimal.ROUND_FLOOR<br>接近负无穷大的舍入模式</p>
+</li>
+<li><p>BigDecimal.ROUND_HALF_UP<br>向最近的一边数字舍入, 四舍五入<br>这个是最常用的</p>
+</li>
+<li><p>BigDecimal.ROUND_HALF_DOWN<br>向最近的一边数字舍入, 五舍六入</p>
+</li>
+<li><p>BigDecimal.ROUND_HALF_EVEN<br>向最近的一边数字舍入，四舍六入. 为五时，如果最近的一边数字是奇数，入，如果是偶数，舍</p>
+</li>
+<li><p>BigDecimal.ROUND_UNNECESSARY<br>计算结果是精确的，不需要舍入<br>结果不精确会抛出异常ArithmeticException</p>
+</li>
+</ol>
+<hr>
+<h2 id="三-题目"><a href="#三-题目" class="headerlink" title="三,题目"></a>三,题目</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p><strong>本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。</strong></p>
+<p>你一定听说过这个故事。国王对发明国际象棋的大臣很佩服，问他要什么报酬，大臣说：请在第 11 个棋盘格放 11 粒麦子，在第 22 个棋盘格放 22 粒麦子，在第 33 个棋盘格放 44 粒麦子，在第 44 个棋盘格放 88 粒麦子，……后一格的数字是前一格的两倍，直到放完所有棋盘格（国际象棋共有 6464 格）。</p>
+<p>国王以为他只是想要一袋麦子而已，哈哈大笑。</p>
+<p>当时的条件下无法准确计算，但估算结果令人吃惊：即使全世界都铺满麦子也不够用！</p>
+<p>请你借助计算机准确地计算，到底需要多少粒麦子。</p>
+<h3 id="运行限制"><a href="#运行限制" class="headerlink" title="运行限制"></a>运行限制</h3><ul>
+<li>最大运行时间：1s</li>
+<li>最大运行内存: 128M</li>
+</ul>
+<h3 id="程序代码"><a href="#程序代码" class="headerlink" title="程序代码"></a>程序代码</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">		<span class="type">BigInteger</span> <span class="variable">a</span> <span class="operator">=</span> BigInteger.valueOf(n);</span><br><span class="line">		<span class="type">BigInteger</span> <span class="variable">b</span> <span class="operator">=</span> BigInteger.valueOf(<span class="number">2</span>);</span><br><span class="line">		<span class="type">BigInteger</span> <span class="variable">sum</span> <span class="operator">=</span> BigInteger.valueOf(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//		这样说明初始化第一个格子已经放了</span></span><br><span class="line">		<span class="keyword">while</span> (count &lt; <span class="number">64</span>) &#123;</span><br><span class="line">			a = a.multiply(b);</span><br><span class="line">			sum = sum.add(a);</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>竞赛算法和数据结构</category>
+        <category>数论</category>
+        <category>biginteger和bigdecimal常用api</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>找质数</title>
+    <url>/2023/08/13/%E6%89%BE%E8%B4%A8%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="质数-只有1和本身两个约数的数"><a href="#质数-只有1和本身两个约数的数" class="headerlink" title="质数: 只有1和本身两个约数的数"></a>质数: <strong>只有1和本身两个约数的数</strong></h2><p><strong>（埃氏筛法就不写了，直接上欧拉筛 ，yyds！！）</strong></p>
+<h2 id="方法一：暴力大法"><a href="#方法一：暴力大法" class="headerlink" title="方法一：暴力大法"></a>方法一：暴力大法</h2><p>​    <strong>每一个整数都可以看做由两个数相乘得到，且每个乘数不大于原整数的平方根（可以减少相应的时间复杂度），本质还是暴力</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PrimeCheck</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">		<span class="keyword">while</span>(sc.hasNext()) &#123;</span><br><span class="line">			<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">			System.out.println(isPrime(n)?<span class="string">&quot;yes&quot;</span>:<span class="string">&quot;no&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isPrime</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(n&lt;=<span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n/i;i++) <span class="keyword">if</span>(n%i==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="方法二：欧拉筛（线性筛）"><a href="#方法二：欧拉筛（线性筛）" class="headerlink" title="方法二：欧拉筛（线性筛）"></a>方法二：欧拉筛（线性筛）</h2><p><strong>核心思路 ：每个合数只被其最小的素因子筛一次，大大减少了时间复杂度</strong></p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Main &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n = sc.nextInt();</span><br><span class="line">		<span class="keyword">int</span>[] prim = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">		<span class="keyword">boolean</span>[] isp = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line"><span class="comment">//		质数为false，合数为true</span></span><br><span class="line">		<span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//		i是boolean数组的指针</span></span><br><span class="line"><span class="comment">//		j是prim数组的指针</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; isp.length; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (isp[i] == <span class="keyword">false</span>)</span><br><span class="line">				prim[<span class="keyword">count</span>++] = i;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="keyword">count</span> &amp;&amp; i * prim[j] &lt; n; j++) &#123;</span><br><span class="line"><span class="comment">//				保证素数的倍数不超过打表区间</span></span><br><span class="line">				isp[i * prim[j]] = <span class="keyword">true</span>;</span><br><span class="line"><span class="comment">//				质数的倍数一定是合数</span></span><br><span class="line">				<span class="keyword">if</span> (i % prim[j] == <span class="number">0</span>)</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line"><span class="comment">//				欧拉筛的核心  每个合数只被其最小的素因子筛一次</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.<span class="keyword">println</span>(<span class="keyword">count</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (prim[i] != <span class="number">0</span>)</span><br><span class="line">				System.out.<span class="keyword">print</span>(prim[i] + <span class="string">&quot;  &quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>竞赛算法和数据结构</category>
+        <category>数论</category>
+        <category>质数</category>
+        <category>质数筛</category>
       </categories>
   </entry>
   <entry>
@@ -219,60 +376,6 @@
         <category>数论</category>
         <category>进制模拟和数位拆分</category>
         <category>题目二、计算进位</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>hexo在git下的快捷指令以及md文件编写</title>
-    <url>/2023/07/30/hexo%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="快捷指令"><a href="#快捷指令" class="headerlink" title="快捷指令"></a>快捷指令</h1><hr>
-<h2 id="生成文章的编辑工具"><a href="#生成文章的编辑工具" class="headerlink" title="生成文章的编辑工具"></a>生成文章的编辑工具</h2><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;文章链接&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo s</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<span id="more"></span>
-
-<h2 id="更新博客"><a href="#更新博客" class="headerlink" title="更新博客"></a>更新博客</h2><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo g -d</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="markdown文件编译"><a href="#markdown文件编译" class="headerlink" title="markdown文件编译"></a>markdown文件编译</h1><hr>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--more--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="显示全文"><a href="#显示全文" class="headerlink" title="显示全文"></a>显示全文</h2><hr>
-<h2 id="标准开头"><a href="#标准开头" class="headerlink" title="标准开头"></a>标准开头</h2><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">title: 标题</span><br><span class="line">date: 时间</span><br><span class="line"><span class="keyword">tags:</span> 标签</span><br><span class="line">categories: 分类</span><br><span class="line"></span><br><span class="line">记得冒号后加空格！！</span><br><span class="line"></span><br><span class="line">分类的例子：</span><br><span class="line">categories:</span><br><span class="line">- [学习,html]</span><br><span class="line">- [学习,http]</span><br><span class="line">效果如本博客所示</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>英文的&gt;是文章摘要，一个回车继续写，2个回车退出该次编辑</p>
-<figure class="highlight node-repl"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span> <span class="language-javascript">+文章概要</span></span><br></pre></td></tr></table></figure>
-
-<p>例如：</p>
-<blockquote>
-<p>文章摘要</p>
-</blockquote>
-<hr>
-<h2 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h2><p>-[]内容，在横岗后面加空格，在中括号中加空格。</p>
-<p>例如</p>
-<ul>
-<li><input disabled="" type="checkbox"> </li>
-</ul>
-<hr>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line">方法一：~~内容~~</span><br><span class="line"> </span><br><span class="line">方法二：~~内容~   </span><br></pre></td></tr></table></figure>
-
-<p>示例：</p>
-<p><del>内容</del></p>
-<hr>
-<h2 id="划横线和代码块"><a href="#划横线和代码块" class="headerlink" title="划横线和代码块"></a>划横线和代码块</h2><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">划横线：<span class="comment">---</span></span><br><span class="line">代码块：~~~</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="latex数学公式编辑器"><a href="#latex数学公式编辑器" class="headerlink" title="latex数学公式编辑器"></a>latex数学公式编辑器</h2><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line">里面插入latex代码</span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line">[在线latex工具](https:<span class="comment">//www.texpage.com/)</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>hexo快捷指令</category>
       </categories>
   </entry>
   <entry>
