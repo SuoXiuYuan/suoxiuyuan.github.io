@@ -78,6 +78,89 @@
       </categories>
   </entry>
   <entry>
+    <title>质因子</title>
+    <url>/2023/08/14/%E8%B4%A8%E5%9B%A0%E5%AD%90/</url>
+    <content><![CDATA[<h2 id="前缀知识"><a href="#前缀知识" class="headerlink" title="前缀知识"></a>前缀知识</h2><h3 id="算术基本定理"><a href="#算术基本定理" class="headerlink" title="算术基本定理"></a>算术基本定理</h3><p><strong>算术基本定理</strong>，又称为**<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E6%95%B4%E6%95%B8">正整数</a>的唯一分解定理**，即：每个大于1的<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E6%95%B0">自然数</a>，要么本身就是<a href="https://zh.wikipedia.org/wiki/%E8%B4%A8%E6%95%B0">质数</a>，要么可以写为2个或以上的质数的<a href="https://zh.wikipedia.org/wiki/%E7%A7%AF">积</a>，而且这些质因子按大小排列之后，写法仅有一种方式。</p>
+<p><strong>例如：</strong><br>$$<br>936&#x3D;2^{3} \times 3 \times 17^{2}, 1200&#x3D;2^{4} \times 3 \times 5^{2}, 5207&#x3D;41 \times 127<br>$$</p>
+<h2 id="质因子相关模板："><a href="#质因子相关模板：" class="headerlink" title="质因子相关模板："></a>质因子相关模板：</h2><span id="more"></span>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (sc.hasNext()) &#123;</span><br><span class="line"></span><br><span class="line">			<span class="type">long</span> <span class="variable">n</span> <span class="operator">=</span> sc.nextLong();</span><br><span class="line"></span><br><span class="line">			<span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="comment">//		任何一个数的质因子大于根号n的要么没有要么只有一个	</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt;= n / i; i++) &#123;</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">					ans++;</span><br><span class="line"><span class="comment">//					设置系数</span></span><br><span class="line">					<span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">					<span class="keyword">while</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">						n /= i;</span><br><span class="line">						cnt++;</span><br><span class="line">					&#125;</span><br><span class="line">					System.out.println(<span class="string">&quot;质数为&quot;</span> + i + <span class="string">&quot;的幂次系数是&quot;</span> + cnt);</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"><span class="comment">//	//		任何一个数的质因子大于根号n的要么没有要么只有一个			</span></span><br><span class="line">			<span class="keyword">if</span> (n &gt; <span class="number">1</span>) &#123;</span><br><span class="line">				System.out.println(n + <span class="string">&quot;幂次系数是&quot;</span> + <span class="number">1</span>);</span><br><span class="line">				ans++;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			System.out.println(<span class="string">&quot;质因子种类个数为&quot;</span> + ans);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="例题一："><a href="#例题一：" class="headerlink" title="例题一："></a>例题一：</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给定正整数 <em>n</em>, 请问有多少个质数是 <em>n</em> 的约数。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入的第一行包含一个整数 <em>n</em> 。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一个整数, 表示 <em>n</em> 的质数约数个数。</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">396</span><br></pre></td></tr></table></figure>
+
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<h3 id="样例说明"><a href="#样例说明" class="headerlink" title="样例说明"></a>样例说明</h3><p>396 有 2,3,11 三个质数约数。</p>
+<h3 id="评测用例规模与约定"><a href="#评测用例规模与约定" class="headerlink" title="评测用例规模与约定"></a>评测用例规模与约定</h3><p>对于 30% 的评测用例, 1≤n≤10000 。</p>
+<p>对于 60% 的评测用例, 1≤n≤10^9 。</p>
+<p>对于所有评测用例, 1≤n≤10^16。</p>
+<h3 id="运行限制"><a href="#运行限制" class="headerlink" title="运行限制"></a>运行限制</h3><ul>
+<li>最大运行时间：10s</li>
+<li>最大运行内存: 512M</li>
+</ul>
+<h3 id="程序代码"><a href="#程序代码" class="headerlink" title="程序代码"></a>程序代码</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> bisai;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (sc.hasNext()) &#123;</span><br><span class="line"></span><br><span class="line">			<span class="type">long</span> <span class="variable">n</span> <span class="operator">=</span> sc.nextLong();</span><br><span class="line"></span><br><span class="line">			<span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="comment">//		任何一个数的质因子大于根号n的要么没有要么只有一个	</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt;= n / i; i++) &#123;</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">					ans++;</span><br><span class="line"><span class="comment">//					设置系数</span></span><br><span class="line">					<span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">					<span class="keyword">while</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">						n /= i;</span><br><span class="line">						cnt++;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"><span class="comment">//	//		任何一个数的质因子大于根号n的要么没有要么只有一个			</span></span><br><span class="line">			<span class="keyword">if</span> (n &gt; <span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">				ans++;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(ans);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="例题二"><a href="#例题二" class="headerlink" title="例题二:"></a>例题二:</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>任何一个大于 1 的正整数都能被分解为若干个质数相乘, 比如 28&#x3D;2×2×728&#x3D;2×2×7 被分解为了三个质数相乘。请问在区间 [2333333, 23333333] 中有多少个正整数 可以被分解为 12 个质数相乘?</p>
+<h3 id="答案提交"><a href="#答案提交" class="headerlink" title="答案提交"></a>答案提交</h3><p>这是一道结果填空的题，你只需要算出结果后提交即可。本题的结果为一 个整数, 在提交答案时只填写这个整数, 填写多余的内容将无法得分。</p>
+<h3 id="运行限制-1"><a href="#运行限制-1" class="headerlink" title="运行限制"></a>运行限制</h3><ul>
+<li>最大运行时间：1s</li>
+<li>最大运行内存: 512M</li>
+</ul>
+<h3 id="程序代码："><a href="#程序代码：" class="headerlink" title="程序代码："></a>程序代码：</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="built_in">public</span> <span class="keyword">class</span> Main &#123;</span><br><span class="line">	<span class="built_in">public</span> static <span class="type">void</span> main(String[] args) &#123;</span><br><span class="line">		Scanner sc = <span class="built_in">new</span> Scanner(<span class="keyword">System</span>.<span class="keyword">in</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (sc.hasNext()) &#123;</span><br><span class="line"></span><br><span class="line">			long n = sc.nextLong();</span><br><span class="line"></span><br><span class="line">			<span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">2333333</span>; j &lt; <span class="number">23333333</span>; j++) &#123;</span><br><span class="line"></span><br><span class="line">				<span class="type">int</span> <span class="keyword">temp</span> = j;</span><br><span class="line">				<span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">				<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= <span class="keyword">temp</span> / i; i++) &#123;</span><br><span class="line"></span><br><span class="line">					<span class="keyword">while</span> (<span class="keyword">temp</span> % i == <span class="number">0</span>) &#123;</span><br><span class="line">						<span class="keyword">temp</span> /= i;</span><br><span class="line">						num++;</span><br><span class="line">					&#125;</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (<span class="keyword">temp</span> &gt; <span class="number">1</span>)</span><br><span class="line">					num++;</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span> (num == <span class="number">12</span>)</span><br><span class="line">					ans++;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">System</span>.<span class="keyword">out</span>.println(ans);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>竞赛算法和数据结构</category>
+        <category>数论</category>
+        <category>质因子</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>等差数列</title>
+    <url>/2023/08/14/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97/</url>
+    <content><![CDATA[<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>数学老师给小明出了一道等差数列求和的题目。但是粗心的小明忘记了一 部分的数列，只记得其中 <em>N</em> 个整数。</p>
+<p>现在给出这 <em>N</em> 个整数，小明想知道包含这 <em>N</em> 个整数的最短的等差数列有几项？</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h3><span id="more"></span>
+
+<p>输入的第一行包含一个整数 <em>N</em>。</p>
+<p>第二行包含 N 个整数 A1 ,A2 ,··· ,AN 。(注意 A1 ∼ AN 并不一定是按等差数列中的顺序给出)</p>
+<h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h3><p>输出一个整数表示答案。</p>
+<h3 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><blockquote>
+<p>输入</p>
+</blockquote>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">5</span><br><span class="line">2 6 4 10 20</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>输出</p>
+</blockquote>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">10</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>样例说明： 包含 2、6、4、10、20 的最短的等差数列是 2、4、6、8、10、12、14、16、 18、20。</p>
+</blockquote>
+<h3 id="运行限制"><a href="#运行限制" class="headerlink" title="运行限制"></a>运行限制</h3><ul>
+<li>最大运行时间：1s</li>
+<li>最大运行内存: 256M</li>
+</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>(1) 等差数列的求n项的公式：n &#x3D; (an-a1) &#x2F; d + 1;<br>(2) 等差数列的每一项利用公差表达的通式：(下标从1开始)a1,a2,a3…an。<br>a2 - a1 &#x3D; d,<br>a3 - a1 &#x3D; 2d,<br>…<br>an - a1 &#x3D; (n-1)d;<br>所以每一项与第一项的差值都是公差d的倍数。d是差值的公约数！</p>
+<p>我们只需要找出最小的那个最大公约数即可，即为我们的公差</p>
+<p>再利用等差数列前n项和公式计算出对应的答案</p>
+<h3 id="程序代码"><a href="#程序代码" class="headerlink" title="程序代码"></a>程序代码</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (sc.hasNext()) &#123;</span><br><span class="line">			<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">			<span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">				a[i] = sc.nextInt();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			Arrays.sort(a);</span><br><span class="line">			<span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> (a[<span class="number">1</span>] - a[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">				b = gcd(b, a[i] - a[i - <span class="number">1</span>]);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">				System.out.println(n);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println((a[n - <span class="number">1</span>] - a[<span class="number">0</span>]) / b + <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a % b);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>竞赛算法和数据结构</category>
+        <category>数论</category>
+        <category>杂题</category>
+        <category>等差数列</category>
+      </categories>
+  </entry>
+  <entry>
     <title>biginteger和bigdecimal的运用(相关题目：棋盘放麦子等)</title>
     <url>/2023/08/13/biginteger%E5%92%8Cbigdecimal%E7%9A%84%E8%BF%90%E7%94%A8/</url>
     <content><![CDATA[<h2 id="一，biginteger"><a href="#一，biginteger" class="headerlink" title="一，biginteger"></a>一，biginteger</h2><p><strong>①</strong>value.Of(参数); 这个函数的作用是将括号内的参数转换成指定的数据类型</p>
