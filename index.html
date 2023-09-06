@@ -404,6 +404,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/06/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SuoXiuYuan">
+      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SuoXiuYuan's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/06/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">双指针算法</a>
+        </h2>
+
+        <div class="post-meta">
+
+
+
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-09-06 15:23:27 / 修改时间：19:09:53" itemprop="dateCreated datePublished" datetime="2023-09-06T15:23:27+08:00">2023-09-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">竞赛算法和数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">双指针算法</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>375</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="双指针算法"><a href="#双指针算法" class="headerlink" title="双指针算法"></a>双指针算法</h1><p>双指针算法是一种通过维护两个指针来合并两个有序序列的算法。其中，一个指针指向其中一个序列，另一个指针指向另外一个序列。在每次迭代中，两个指针分别移动一步，当两个指针都移动完毕时，整个排序过程结束。双指针算法可以优化朴素算法的时间复杂度，从O(n^2)^  优化为O(n)。优化后的算法利用了两个指针的单调性，使得我们只需要枚举O(n)个状态，而不是朴素算法中的O(n^2)个状态</p>
+<h2 id="代码模板："><a href="#代码模板：" class="headerlink" title="代码模板："></a>代码模板：</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span><span class="params">(i=<span class="number">0</span>,j=<span class="number">0</span>;i&lt;n;i++)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">while</span><span class="params">(j&lt;i&amp;&amp;check(i,j)</span></span> j++)</span><br><span class="line"><span class="comment">//(check()为某个特定条件)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//每道题的逻辑</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例题1："><a href="#例题1：" class="headerlink" title="例题1："></a>例题1：</h2><p>输入一行字母，每个单词之间有空格，把每个单词放在不同的行</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">abc bcd efg</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">abc</span></span><br><span class="line"><span class="attribute">bcd</span></span><br><span class="line"><span class="attribute">efg</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><p><strong>java：</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="built_in">public</span> <span class="keyword">class</span> Main &#123;</span><br><span class="line">    <span class="built_in">public</span> static <span class="type">void</span> main(String[] args) &#123;</span><br><span class="line">        Scanner sc=<span class="built_in">new</span> Scanner(<span class="keyword">System</span>.<span class="keyword">in</span>);</span><br><span class="line"></span><br><span class="line">        String s1=sc.nextLine();</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> n=s1.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> j=i;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (j&lt;n&amp;&amp;s1.charAt(j)!=<span class="string">&#x27; &#x27;</span>)  j++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = i; k &lt; j ; k++) &#123;</span><br><span class="line">                <span class="keyword">System</span>.<span class="keyword">out</span>.print(s1.charAt(k));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.println();</span><br><span class="line">            i=j;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>ps！！</strong>：next()与nextLine()比较大的区别是用next()不能得到带空格的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%AD%97%E7%AC%A6%E4%B8%B2&spm=1001.2101.3001.7020">字符串</a>,而nextLine()可以。</p>
+<h3 id="例题二："><a href="#例题二：" class="headerlink" title="例题二："></a>例题二：</h3><p>给定一个长度为 n 的整数序列，请找出最长的不包含重复的数的连续区间，输出它的长度。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含整数 n。</p>
+<p>第二行包含 n 个整数（均在 0∼10^5 范围内），表示整数序列。</p>
+<p>输出格式</p>
+<p>共一行，包含一个整数，表示最长的不包含重复的数的连续区间的长度。</p>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><p>1≤n≤10^5</p>
+<h3 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h3><p>5<br>1 2 2 3 5</p>
+<h3 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3</p>
+<h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><p>java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">int</span> N=(<span class="type">int</span>) (<span class="number">1e5</span>+<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span>[]arr=<span class="keyword">new</span> <span class="title class_">int</span>[N];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span>[]s=<span class="keyword">new</span> <span class="title class_">int</span>[N];</span><br><span class="line"></span><br><span class="line"><span class="comment">//	用于记录数组中数字出现的次数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        BufferedReader bufferedReader= <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> Integer.parseInt(bufferedReader.readLine());</span><br><span class="line"></span><br><span class="line">        String[] input = bufferedReader.readLine().split(<span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line"></span><br><span class="line">            arr[i]=Integer.parseInt(input[i]);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//		区间顺序从j到i</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j=<span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line"></span><br><span class="line">            s[arr[i]]++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (s[arr[i]]&gt;<span class="number">1</span>&amp;&amp;i&gt;=j) &#123;</span><br><span class="line"></span><br><span class="line">                s[arr[j]]--;</span><br><span class="line"></span><br><span class="line">                j++;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            ans=Math.max(ans, i-j+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(ans);</span><br><span class="line"></span><br><span class="line">        bufferedReader.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/05/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1113,107 +1224,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E6%95%B4%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95%E5%92%8C%E4%B9%98%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="SuoXiuYuan">
-      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SuoXiuYuan's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E6%95%B4%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95%E5%92%8C%E4%B9%98%E6%B3%95/" class="post-title-link" itemprop="url">字符串模拟整数的加法和乘法</a>
-        </h2>
-
-        <div class="post-meta">
-
-
-
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-08-01 01:38:26 / 修改时间：02:47:37" itemprop="dateCreated datePublished" datetime="2023-08-01T01:38:26+08:00">2023-08-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">竞赛算法和数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E8%AE%BA/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B4%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95%E5%92%8C%E4%B9%98%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">字符串模拟大整数的加法和乘法</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>174</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="大整数相加与相乘（字符串模拟）"><a href="#大整数相加与相乘（字符串模拟）" class="headerlink" title="大整数相加与相乘（字符串模拟）"></a>大整数相加与相乘（字符串模拟）</h1><hr>
-<h2 id="一、大整数相加模拟"><a href="#一、大整数相加模拟" class="headerlink" title="一、大整数相加模拟"></a>一、大整数相加模拟</h2><h3 id="思路分析："><a href="#思路分析：" class="headerlink" title="思路分析："></a>思路分析：</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E6%95%B4%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95%E5%92%8C%E4%B9%98%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1285,14 +1295,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -1332,12 +1342,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">7k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
