@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Java前端路线第一部分：web前端（基础） HTML+CSS 尚优选（练习如何布局）学完这些之后，自己手敲一个京东页面，一个博学谷页面（脱离视频）   第二部分：（进阶）JavaScript基础JavaScript高级Ajaxes6PromiseaxiosNode.jsWebPack5第三部分：框架Vue2+Vue3Vue2项目实战微信小程序微信小程序实战Vue3(上面大部分都为vue2，此视频">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端">
+<meta property="og:url" content="http://example.com/2024/04/30/front/index.html">
+<meta property="og:site_name" content="SuoXiuYuan&#39;s Blog">
+<meta property="og:description" content="Java前端路线第一部分：web前端（基础） HTML+CSS 尚优选（练习如何布局）学完这些之后，自己手敲一个京东页面，一个博学谷页面（脱离视频）   第二部分：（进阶）JavaScript基础JavaScript高级Ajaxes6PromiseaxiosNode.jsWebPack5第三部分：框架Vue2+Vue3Vue2项目实战微信小程序微信小程序实战Vue3(上面大部分都为vue2，此视频">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-30T13:34:29.000Z">
+<meta property="article:modified_time" content="2024-04-30T13:36:40.351Z">
+<meta property="article:author" content="SuoXiuYuan">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/04/30/front/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端 | SuoXiuYuan's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+
+
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">SuoXiuYuan's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">轻舟已过万重山</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/30/front/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SuoXiuYuan">
+      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SuoXiuYuan's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端
+        </h1>
+
+        <div class="post-meta">
+
+
+
+    <i class="fa fa-thumb-tack"></i>
+    <font color="RED">置顶</font>
+    <span class="post-meta-divider">|</span>
+
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-04-30 21:34:29 / 修改时间：21:36:40" itemprop="dateCreated datePublished" datetime="2024-04-30T21:34:29+08:00">2024-04-30</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>117</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Java前端路线"><a href="#Java前端路线" class="headerlink" title="Java前端路线"></a>Java前端路线</h1><h2 id="第一部分：web前端（基础）"><a href="#第一部分：web前端（基础）" class="headerlink" title="第一部分：web前端（基础）"></a>第一部分：web前端（基础）</h2><ul>
+<li><h3 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1XJ411X7Ud?vd_source=e83cb7d00b1d99fd167454b293dfdddd">HTML+CSS</a></h3></li>
+<li><h3 id="尚优选（练习如何布局）"><a href="#尚优选（练习如何布局）" class="headerlink" title="尚优选（练习如何布局）"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ra411X7RX/?vd_source=fb74ca8f85f5680ee6b71243e4bd4322">尚优选（练习如何布局）</a></h3><p><strong>学完这些之后，自己手敲一个京东页面，一个博学谷页面（脱离视频）</strong></p>
+</li>
+</ul>
+<h2 id="第二部分：（进阶）"><a href="#第二部分：（进阶）" class="headerlink" title="第二部分：（进阶）"></a>第二部分：（进阶）</h2><h3 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ft411N7R3?vd_source=e83cb7d00b1d99fd167454b293dfdddd(%E5%8A%A8%E5%8A%9B%E8%8A%82%E7%82%B9%E8%80%81%E6%9D%9C)">JavaScript基础</a></h3><h3 id="JavaScript高级"><a href="#JavaScript高级" class="headerlink" title="JavaScript高级"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1VL411h72F?vd_source=e83cb7d00b1d99fd167454b293dfdddd">JavaScript高级</a></h3><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1MN411y7pw?vd_source=e83cb7d00b1d99fd167454b293dfdddd%EF%BC%88%E9%BB%91%E9%A9%AC%EF%BC%89">Ajax</a></h3><h3 id="es6"><a href="#es6" class="headerlink" title="es6"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1uK411H7on?vd_source=e83cb7d00b1d99fd167454b293dfdddd">es6</a></h3><h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Tm4y1h7SY?vd_source=e83cb7d00b1d99fd167454b293dfdddd">Promise</a></h3><h3 id="axios"><a href="#axios" class="headerlink" title="axios"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wr4y1K7tq?vd_source=e83cb7d00b1d99fd167454b293dfdddd">axios</a></h3><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1gM411W7ex?vd_source=e83cb7d00b1d99fd167454b293dfdddd(%E5%B0%9A%E7%A1%85%E8%B0%B7)">Node.js</a></h3><h3 id="WebPack5"><a href="#WebPack5" class="headerlink" title="WebPack5"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14T4y1z7sw?vd_source=e83cb7d00b1d99fd167454b293dfdddd">WebPack5</a></h3><h2 id="第三部分：框架"><a href="#第三部分：框架" class="headerlink" title="第三部分：框架"></a>第三部分：框架</h2><h3 id="Vue2-Vue3"><a href="#Vue2-Vue3" class="headerlink" title="Vue2+Vue3"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HV4y1a7n4?vd_source=e83cb7d00b1d99fd167454b293dfdddd(%E9%BB%91%E9%A9%AC)">Vue2+Vue3</a></h3><h3 id="Vue2项目实战"><a href="#Vue2项目实战" class="headerlink" title="Vue2项目实战"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vf4y1T7bw?vd_source=e83cb7d00b1d99fd167454b293dfdddd">Vue2项目实战</a></h3><h3 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1834y1676P?vd_source=e83cb7d00b1d99fd167454b293dfdddd">微信小程序</a></h3><h3 id="微信小程序实战"><a href="#微信小程序实战" class="headerlink" title="微信小程序实战"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12K411A7A2?vd_source=e83cb7d00b1d99fd167454b293dfdddd">微信小程序实战</a></h3><h3 id="Vue3-上面大部分都为vue2，此视频为单独的vue3教学"><a href="#Vue3-上面大部分都为vue2，此视频为单独的vue3教学" class="headerlink" title="Vue3(上面大部分都为vue2，此视频为单独的vue3教学)"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ac411K7EQ?vd_source=e83cb7d00b1d99fd167454b293dfdddd">Vue3(上面大部分都为vue2，此视频为单独的vue3教学)</a></h3><h3 id="Vue实战"><a href="#Vue实战" class="headerlink" title="Vue实战"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xh411V7b5?vd_source=e83cb7d00b1d99fd167454b293dfdddd">Vue实战</a></h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/09/24/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8api/" rel="prev" title="字符串的常用api">
+      <i class="fa fa-chevron-left"></i> 字符串的常用api
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/04/30/%E5%89%8D%E5%90%8E%E7%AB%AF%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="next" title="前后端的区别">
+      前后端的区别 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%BA%BF"><span class="nav-number">1.</span> <span class="nav-text">Java前端路线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9Aweb%E5%89%8D%E7%AB%AF%EF%BC%88%E5%9F%BA%E7%A1%80%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">第一部分：web前端（基础）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-CSS"><span class="nav-number">1.1.1.</span> <span class="nav-text">HTML+CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9A%E4%BC%98%E9%80%89%EF%BC%88%E7%BB%83%E4%B9%A0%E5%A6%82%E4%BD%95%E5%B8%83%E5%B1%80%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">尚优选（练习如何布局）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A%EF%BC%88%E8%BF%9B%E9%98%B6%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">第二部分：（进阶）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript%E5%9F%BA%E7%A1%80"><span class="nav-number">1.2.1.</span> <span class="nav-text">JavaScript基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript%E9%AB%98%E7%BA%A7"><span class="nav-number">1.2.2.</span> <span class="nav-text">JavaScript高级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax"><span class="nav-number">1.2.3.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#es6"><span class="nav-number">1.2.4.</span> <span class="nav-text">es6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">1.2.5.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axios"><span class="nav-number">1.2.6.</span> <span class="nav-text">axios</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js"><span class="nav-number">1.2.7.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebPack5"><span class="nav-number">1.2.8.</span> <span class="nav-text">WebPack5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9A%E6%A1%86%E6%9E%B6"><span class="nav-number">1.3.</span> <span class="nav-text">第三部分：框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue2-Vue3"><span class="nav-number">1.3.1.</span> <span class="nav-text">Vue2+Vue3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue2%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98"><span class="nav-number">1.3.2.</span> <span class="nav-text">Vue2项目实战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.3.3.</span> <span class="nav-text">微信小程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%9E%E6%88%98"><span class="nav-number">1.3.4.</span> <span class="nav-text">微信小程序实战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue3-%E4%B8%8A%E9%9D%A2%E5%A4%A7%E9%83%A8%E5%88%86%E9%83%BD%E4%B8%BAvue2%EF%BC%8C%E6%AD%A4%E8%A7%86%E9%A2%91%E4%B8%BA%E5%8D%95%E7%8B%AC%E7%9A%84vue3%E6%95%99%E5%AD%A6"><span class="nav-number">1.3.5.</span> <span class="nav-text">Vue3(上面大部分都为vue2，此视频为单独的vue3教学)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue%E5%AE%9E%E6%88%98"><span class="nav-number">1.3.6.</span> <span class="nav-text">Vue实战</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SuoXiuYuan"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SuoXiuYuan</p>
+  <div class="site-description" itemprop="description">路漫漫其修远兮，吾将上下而求索</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SuoXiuYuan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">7k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">25 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+<script type="text/javascript"
+color="0,0,0" opacity='0.7' zIndex="-2" count="500" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+</body>
+</html>
